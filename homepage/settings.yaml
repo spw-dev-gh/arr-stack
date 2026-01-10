@@ -1,0 +1,36 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+title: Pi Media Server
+background:
+  image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+  blur: sm
+  opacity: 50
+theme: dark
+color: slate
+headerStyle: boxed
+cardBlur: md
+disableCollapse: true
+
+layout:
+  Network:
+    style: row
+    columns: 3
+    header: true
+  Media:
+    style: row
+    columns: 2
+    header: true
+  Management:
+    style: row
+    columns: 2
+    header: true
+  System:
+    style: row
+    columns: 2
+    header: true
+  Trending:
+    style: row
+    columns: 2
+    header: true

@@ -1,0 +1,6 @@
+# Exclude sensitive environment variables
+.env
+
+# Exclude any local test files
+*.local
+*.tmp
