@@ -104,7 +104,7 @@
           type: customapi
           url: http://192.168.1.194:5678/api/v1/workflows
           headers:
-            X-N8N-API-KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjY2VlNzNmMi1kMzZiLTQ5YWQtYTQ2ZC1iMWRmZDdhMzlhM2YiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzY4MTU4NTcyfQ.tM2rsrJRrRd0qe5LXgVvfllM9tPt6p2_dIpKvnrkEKQ
+            X-N8N-API-KEY: "{{HOMEPAGE_VAR_X_N8N_API_KEY}}"
           mappings:
             - field: data
               label: Workflows
