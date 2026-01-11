@@ -211,6 +211,23 @@ services:
       - "8765:80"
     restart: unless-stopped
 
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    environment:
+      - TZ=${TZ}
+      - N8N_HOST=192.168.1.194
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://192.168.1.194:5678/
+      - N8N_SECURE_COOKIE=false
+      - N8N_DIAGNOSTICS_ENABLED=false
+    volumes:
+      - ${CONFIG_PATH}/n8n:/home/node/.n8n
+    ports:
+      - "5678:5678"
+    restart: unless-stopped
 #  uptime-kuma:
 #   image: louislam/uptime-kuma:1
 #  container_name: uptime-kuma
