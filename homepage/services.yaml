@@ -96,7 +96,19 @@
           type: watchtower
           url: http://192.168.1.194:8484
           key: {{HOMEPAGE_VAR_WATCHTOWER_TOKEN}}
-
+    - n8n:
+        icon: n8n.png
+        href: http://192.168.1.194:5678
+        description: Workflow Automation
+        widget:
+          type: customapi
+          url: http://192.168.1.194:5678/api/v1/workflows
+          headers:
+            X-N8N-API-KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjY2VlNzNmMi1kMzZiLTQ5YWQtYTQ2ZC1iMWRmZDdhMzlhM2YiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzY4MTU4NTcyfQ.tM2rsrJRrRd0qe5LXgVvfllM9tPt6p2_dIpKvnrkEKQ
+          mappings:
+            - field: data
+              label: Workflows
+              format: size
 - Trending:
     - 1337x:
         widget:
