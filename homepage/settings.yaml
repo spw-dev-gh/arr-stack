@@ -20,7 +20,7 @@ layout:
     header: true
   Media:
     style: row
-    columns: 2
+    columns: 3
     header: true
   Management:
     style: row
