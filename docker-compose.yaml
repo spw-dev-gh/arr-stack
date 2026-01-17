@@ -212,7 +212,16 @@ services:
       - "8765:80"
     restart: unless-stopped
 
-
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${CONFIG_PATH}/jellyseerr:/app/config
+    ports:
+      - "5055:5055"
+    restart: unless-stopped
   n8n:
     image: n8nio/n8n:latest
     container_name: n8n
@@ -251,3 +260,4 @@ services:
 networks:
   gluetun-network:
     name: gluetun-network
+
