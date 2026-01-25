@@ -213,6 +213,23 @@ services:
       - "8765:80"
     restart: unless-stopped
 
+  declutarr:
+    image: ghcr.io/manimatter/decluttarr:latest
+    container_name: declutarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - SONARR_API_KEY=${SONARR_API_KEY}
+      - RADARR_API_KEY=${RADARR_API_KEY}
+      - QBITTORRENT_USERNAME=${QBITTORRENT_USERNAME}
+      - QBITTORRENT_PASSWORD=${QBITTORRENT_PASSWORD}
+    volumes:
+      - ${CONFIG_PATH}/declutarr:/app/config
+      - ${MEDIA_PATH}/tv:/tv:ro
+      - ${MEDIA_PATH}/movies:/movies:ro
+    restart: unless-stopped
+
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
@@ -248,6 +265,17 @@ services:
 #      - "3001:3001"
 #    restart: unless-stopped
 
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${CONFIG_PATH}/searxng:/etc/searxng
+    ports:
+      - "8888:8080"
+    restart: unless-stopped
   rss-api:
     build: ./rss-feed
     container_name: rss-api
